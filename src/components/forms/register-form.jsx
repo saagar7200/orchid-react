@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../inputs/input";
+import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
   return (
@@ -36,17 +37,19 @@ const RegisterForm = () => {
               w-full px-3 py-3 rounded-md cursor-pointer
             "
           >
-            Login
+            Sign Up
           </button>
         </div>
       </form>
       {/* link to signup page */}
       <div className="mt-2">
         <p>
-          Don&apos;t have an Account?
+          Already have an Account?
+         <Link to={'/'}>
           <span className=" px-2 text-blue-500 cursor-pointer font-semibold">
-            Sign Up
+            Sign In
           </span>
+         </Link>
         </p>
       </div>
     </div>

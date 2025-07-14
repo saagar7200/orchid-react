@@ -1,12 +1,12 @@
-import LoginForm from "../components/forms/login-form";
-import LoginImage from '../assets/login.jpg'
+import RegisterForm from "../components/forms/register-form";
+import RegisterImage from '../assets/signup.jpg'
 const Register = () => {
   return (
     <div className="flex h-full w-full gap-4">
       {/* image section */}
       <div className="h-full flex-2/3">
         <img
-        src={LoginImage}
+        src={RegisterImage}
         alt="cover image"
         className="h-full object-cover"
         />
@@ -20,7 +20,7 @@ const Register = () => {
         text-gray-700"
         
         >Rgister</h2>
-      <LoginForm />
+      <RegisterForm />
        </div>
      </div>
     </div>
