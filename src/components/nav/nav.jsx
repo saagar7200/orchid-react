@@ -13,9 +13,9 @@ const NavBar = () => {
         <SearchInput/>
       </div>
       {/* user  */}
-      <div className='flex gap-1 items-center'>
-        <span className=" h-full w-auto text-center aspect-square p-2 font-bold  rounded-full bg-blue-300">SB</span>
-        <span className="text-sm">Sagar Bhandari</span>
+      <div className='flex gap-1 items-center w-fit'>
+        <span className="h-full  w-auto text-center aspect-square px-2 py-2 font-bold  rounded-full bg-blue-300">SB</span>
+        <span className="text-sm w-fit min-w-[120px]">Sagar Bhandari</span>
       </div>
     </div>
   );
