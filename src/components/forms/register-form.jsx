@@ -1,17 +1,38 @@
 import React from "react";
 import Input from "../inputs/input";
 import { Link } from "react-router-dom";
+import {useForm,FormProvider} from 'react-hook-form'
+import { yupResolver } from "@hookform/resolvers/yup";
+import { registerSchema } from "../../schema/auth.schema";
 
 const RegisterForm = () => {
+
+  const methods = useForm({
+    defaultValues:{
+        full_name:'',
+        email:'',
+        password:''
+    },
+    resolver:yupResolver(registerSchema)
+  });
+
+
+  const onSubmit = (data) =>{
+    console.log(data)
+  }
+
+
   return (
     <div className="tracking-wider w-full my-auto h-fit px-4">
-      <form className="w-full flex flex-col gap-4 text-gray-600">
+      <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)} className="w-full flex flex-col gap-4 text-gray-600">
         {/* name input */}
         <Input
           label={"Full Name"}
           placeholder={"John Doe"}
           type={"text"}
           required={true}
+          name={'full_name'}
         />
         
         {/*email input component */}
@@ -20,6 +41,7 @@ const RegisterForm = () => {
           placeholder={"johndoe@gmail.com"}
           type={"email"}
           required={true}
+          name={'email'}
         />
         {/* password input */}
         <Input
@@ -27,6 +49,7 @@ const RegisterForm = () => {
           placeholder={"Enter your password"}
           type={"password"}
           required={true}
+          name={'password'}
         />
 
         {/* submit button */}
@@ -41,6 +64,7 @@ const RegisterForm = () => {
           </button>
         </div>
       </form>
+      </FormProvider>
       {/* link to signup page */}
       <div className="mt-2">
         <p>
