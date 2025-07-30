@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/nav/nav";
 import AddNote from "../components/add-note-button";
 import NoteCard from "../components/notes/card";
+import NoteForm from "../components/forms/note-form";
 
 const Dashboard = () => {
   return (
@@ -14,6 +15,7 @@ const Dashboard = () => {
       {/* list notes */}
       <div>
         <NoteCard/>
+        <NoteForm/>
       </div>
 
 
